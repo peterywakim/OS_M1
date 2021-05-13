@@ -55,18 +55,21 @@ public class Main {
 
 		}
 	}
+	
+	//////////////////////////Method to print 2-D array
+	public static void printArray(String [] [] array) {
+		System.out.println(Arrays.deepToString(array));
+		
+	}
 
 	public static void main(String[] args) throws Exception {
-		
-		
-		
-		
-		
-		////////////////////////////////Testing ///////////////////
+
+		//////////////////////////////// Testing ///////////////////
 		String[][] b = loadFile("Program 1.txt");
-		readFunctions(b);/////////// should throw an exception and display error to the user in case of 
-		////////Unkown command as part of compiling , first error found will be Syntax error
-		System.out.println(Arrays.deepToString(b));
+		readFunctions(b);/////////// should throw an exception and display error to the user in case of
+		//////// unkown command as part of compiling , first error found will be Syntax
+		//////// error
+		printArray(b);
 	}
 
 }
