@@ -65,10 +65,10 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 
 		//////////////////////////////// Testing ///////////////////
-		String[][] b = loadFile("Program 1.txt");
-		readFunctions(b);/////////// should throw an exception and display error to the user in case of
-		//////// unkown command as part of compiling , first error found will be Syntax
-		//////// error
+		String[][] b = loadFile("Program 1.txt");// load file into 2D array
+		readFunctions(b);
+		 /*should throw an exception and display error to the user in case of
+	 unkown command as part of compiling , first error found will be Syntax*/
 		printArray(b);
 	}
 
