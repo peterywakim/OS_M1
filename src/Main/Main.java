@@ -32,15 +32,15 @@ public class Main {
 
 		return lines.toArray(new String[][] {});
 	}
-	public static String Printconcatenate (String [] x ) {
-		String y = "";
-		for(int i =1 ; i<x.length;i++) {
-			y.concat(x[i]);
-			
-			
-		}
-		return y;
-	}
+//	public static String Printconcatenate (String [] x ) {
+//		String y = "";
+//		for(int i =1 ; i<x.length;i++) {
+//			y.concat(x[i]);
+//			
+//			
+//		}
+//		return y;
+//	}
 
 	public static void readFunctions(String[][] file) throws Exception {///// check if there an unkown command to give
 																		///// syntax error
