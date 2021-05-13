@@ -32,6 +32,15 @@ public class Main {
 
 		return lines.toArray(new String[][] {});
 	}
+	public static String Printconcatenate (String [] x ) {
+		String y = "";
+		for(int i =1 ; i<x.length;i++) {
+			y.concat(x[i]);
+			
+			
+		}
+		return y;
+	}
 
 	public static void readFunctions(String[][] file) throws Exception {///// check if there an unkown command to give
 																		///// syntax error
@@ -39,6 +48,10 @@ public class Main {
 
 			switch (file[i][0]) {
 			case "print":
+				String y = file[i][1]+" "+file[i][2];
+				System.out.println("Printing ...."+y);
+				String [] [] x =loadFile(y);
+				printArray(x);
 				break;
 			case "assign":
 				break;
@@ -65,7 +78,7 @@ public class Main {
 	public static void main(String[] args) throws Exception { 
 
 		//////////////////////////////// Testing ///////////////////
-		String[][] b = loadFile("Program 1.txt");// load file into 2D array
+		String[][] b = loadFile("Program 2.txt");// load file into 2D array
 		readFunctions(b);
 		 /*should throw an exception and display error to the user in case of
 	 	unkown command as part of compiling , first error found will be Syntax*/
