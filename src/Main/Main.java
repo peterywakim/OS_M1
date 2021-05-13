@@ -32,10 +32,11 @@ public class Main {
 
 		return lines.toArray(new String[][] {});
 	}
-	
-	public static void readFunctions(String [] [] file) throws Exception {///// check if there an unkown command to give syntax error
-		for(int i =0;i<file.length;i++) {
-			
+
+	public static void readFunctions(String[][] file) throws Exception {///// check if there an unkown command to give
+																		///// syntax error
+		for (int i = 0; i < file.length; i++) {
+
 			switch (file[i][0]) {
 			case "print":
 				break;
@@ -45,21 +46,26 @@ public class Main {
 				break;
 			case "add":
 				break;
-			default: throw new Exception("Unkown command Please check line number "+(i+1));
-			
+			case "":
+				break;
+			default:
+				throw new Exception("Unkown command Please check line number " + (i + 1));
+
 			}
-			
-			
-			
-			
-			
+
 		}
 	}
-	
-	
+
 	public static void main(String[] args) throws Exception {
-		String [] [] b = loadFile("Program 1.txt");
-		readFunctions(b);
+		
+		
+		
+		
+		
+		////////////////////////////////Testing ///////////////////
+		String[][] b = loadFile("Program 1.txt");
+		readFunctions(b);/////////// should throw an exception and display error to the user in case of 
+		////////Unkown command as part of compiling , first error found will be Syntax error
 		System.out.println(Arrays.deepToString(b));
 	}
 
