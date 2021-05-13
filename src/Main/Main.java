@@ -49,26 +49,26 @@ public class Main {
 			case "":
 				break;
 			default:
-				throw new Exception("Unkown command Please check line number " + (i + 1));
+				throw new Exception("Unkown Command Please Check line : " + (i + 1));
 
 			}
 
 		}
 	}
 	
-	//////////////////////////Method to print 2-D array
+	//////////////////////////Method to print 2-D array//////////////////
 	public static void printArray(String [] [] array) {
 		System.out.println(Arrays.deepToString(array));
 		
 	}
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception { 
 
 		//////////////////////////////// Testing ///////////////////
 		String[][] b = loadFile("Program 1.txt");// load file into 2D array
 		readFunctions(b);
 		 /*should throw an exception and display error to the user in case of
-	 unkown command as part of compiling , first error found will be Syntax*/
+	 	unkown command as part of compiling , first error found will be Syntax*/
 		printArray(b);
 	}
 
