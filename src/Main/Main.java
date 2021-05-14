@@ -18,6 +18,7 @@ public class Main {
 			while ((line = reader.readLine()) != null) {
 				lines.add(line.split(" "));
 			}
+			System.out.println(filePath +" was read succesfuly");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -46,24 +47,36 @@ public class Main {
 																		///// syntax error
 		for (int i = 0; i < file.length; i++) {
 
-			switch (file[i][0]) {
-			case "print":
-				String y = file[i][1]+" "+file[i][2];
-				System.out.println("Printing ...."+y);
-				String [] [] x =loadFile(y);
-				printArray(x);
-				break;
-			case "assign":
-				break;
-			case "writeFile":
-				break;
-			case "add":
-				break;
-			case "":
-				break;
-			default:
-				throw new Exception("Unkown Command Please Check line : " + (i + 1));
+			try {
+				switch (file[i][0]) {
+				case "print":
+					String y = file[i][1] + " " + file[i][2];
+					System.out.println("Printing ...." + y);
+					String[][] x = loadFile(y);
+					printArray(x);
+					break;
+				case "assign":
+					break;
+				case "writeFile":
+					break;
+				case "readFile":
+					 y = file[i][1] + " " + file[i][2];
+					System.out.println("Reading .... " + y);
+					x = loadFile(y);
+					printArray(x);
+					break;
+				case "add":
+					break;
+				case "":
+					break;
+				default:
+					throw new Exception("Unkown Command Please Check line : " + (i + 1));
 
+				}
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+				break;
+				
 			}
 
 		}
