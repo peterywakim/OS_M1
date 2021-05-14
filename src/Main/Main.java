@@ -1,6 +1,7 @@
 package Main;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class Main {
 			while ((line = reader.readLine()) != null) {
 				lines.add(line.split(" "));
 			}
-			System.out.println(filePath +" was read succesfuly");
+			System.out.println(filePath + " was read succesfuly");//// comment this after being done
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -33,6 +34,9 @@ public class Main {
 
 		return lines.toArray(new String[][] {});
 	}
+
+
+	
 //	public static String Printconcatenate (String [] x ) {
 //		String y = "";
 //		for(int i =1 ; i<x.length;i++) {
@@ -43,7 +47,7 @@ public class Main {
 //		return y;
 //	}
 
-	public static void readFunctions(String[][] file) throws Exception {///// check if there an unkown command to give
+	public static void readFunctions(String[][] file) throws Exception {///// check if there an unknown command to give
 																		///// syntax error
 		for (int i = 0; i < file.length; i++) {
 
@@ -58,9 +62,10 @@ public class Main {
 				case "assign":
 					break;
 				case "writeFile":
+					y= file[i][2]; ///This is the file name
 					break;
 				case "readFile":
-					 y = file[i][1] + " " + file[i][2];
+					y = file[i][1] + " " + file[i][2];
 					System.out.println("Reading .... " + y);
 					x = loadFile(y);
 					printArray(x);
@@ -74,27 +79,29 @@ public class Main {
 
 				}
 			} catch (Exception e) {
-				System.out.println(e.getMessage());
+				System.out.println("Syntax Error : ....." + e.getMessage());
 				break;
-				
+
 			}
 
 		}
 	}
-	
-	//////////////////////////Method to print 2-D array//////////////////
-	public static void printArray(String [] [] array) {
+
+	////////////////////////// Method to print 2-D array//////////////////
+	public static void printArray(String[][] array) {
 		System.out.println(Arrays.deepToString(array));
-		
+
 	}
 
-	public static void main(String[] args) throws Exception { 
+	public static void main(String[] args) throws Exception {
 
 		//////////////////////////////// Testing ///////////////////
 		String[][] b = loadFile("Program 2.txt");// load file into 2D array
 		readFunctions(b);
-		 /*should throw an exception and display error to the user in case of
-	 	unkown command as part of compiling , first error found will be Syntax*/
+		/*
+		 * should throw an exception and display error to the user in case of unknown
+		 * command as part of compiling , first error found will be Syntax
+		 */
 		printArray(b);
 	}
 

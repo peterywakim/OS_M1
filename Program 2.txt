@@ -3,4 +3,3 @@ assign a input
 print Program 3.txt
 assign b input
 writeFile a b
-hello
