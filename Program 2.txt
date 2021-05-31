@@ -1,5 +1,5 @@
-print Enter_file_name
+print Program 1.txt
 assign a input
-print Enter_file_data
+print Program 3.txt
 assign b input
 writeFile a b
