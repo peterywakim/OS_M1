@@ -1,8 +1,10 @@
 package Main;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,8 +37,28 @@ public class Main {
 
 		return lines.toArray(new String[][] {});
 	}
+	public static void readFile(String[][] file) {
+		for (int i = 0; i < file.length; i++) {
+			String y = file[i][1] + " " + file[i][2];
+			String[][] x = loadFile(y);
+			y = file[i][1] + " " + file[i][2];
+			System.out.println("Reading .... " + y);
+			x = loadFile(y);
+		
+		}
+	
+	}
 
-
+	public void writeFile(String StrFile,String StrData) {
+		try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(StrFile,true))){
+			bufferedWriter.write(StrData);
+		} catch( IOException e) {
+			
+		e.printStackTrace();
+			
+		}
+				
+	}
 	
 //	public static String Printconcatenate (String [] x ) {
 //		String y = "";
@@ -71,7 +93,7 @@ public class Main {
 					y = file[i][1] + " " + file[i][2];
 					System.out.println("Reading .... " + y);
 					x = loadFile(y);
-					printArray(x);
+				printArray(x);
 					break;
 				case "add":
 					break;
@@ -89,7 +111,9 @@ public class Main {
 
 		}
 	}
-	
+	public static int add( int x, int y ) {
+		
+	}
 	public static void assign (String Variable, String value) throws Exception {
 		
 		Hashtable <Integer, String> hash1 = new Hashtable<>();
@@ -109,7 +133,8 @@ public class Main {
 		}
 		else {
 			if(value == "readFile") {
-				//forward to readFile (-->>Mohanad<<--)
+				
+				
 				
 			}
 			else {
