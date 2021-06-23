@@ -112,6 +112,8 @@ public class Main {
 		}
 	}
 	public static int add( int x, int y ) {
+		x+=y;
+		return x;
 		
 	}
 	public static void assign (String Variable, String value) throws Exception {
