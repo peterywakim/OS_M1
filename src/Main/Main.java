@@ -175,6 +175,9 @@ public class Main {
 	}
 
 	public static void main(String[] args) throws Exception {
+		
+		
+		// you should inislize operating system here
 
 		//////////////////////////////// Testing ///////////////////
 		String[][] b = loadFile("Program 2.txt");// load file into 2D array
