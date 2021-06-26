@@ -178,6 +178,7 @@ public class Main {
 		
 		
 		// you should inislize operating system here
+		operating_System os = new operating_System();
 
 		//////////////////////////////// Testing ///////////////////
 		String[][] b = loadFile("Program 2.txt");// load file into 2D array
