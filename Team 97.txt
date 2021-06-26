@@ -1,6 +1,3 @@
 Peter Samir Armanyous Ywakim
-Code parser/interpreter, the print and input instructions.
 Fiby Ashraf 43-4575 
-The assign instruction with all its sub cases.
 Mohanad yaser eldahshan 46-1015
-The add, read file and write file instructions.
