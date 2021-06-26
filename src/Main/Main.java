@@ -13,7 +13,7 @@ import java.util.Hashtable;
 
 public class Main {
 
-	private static String[][] loadFile(String filePath) {
+	 static String[][] loadFile(String filePath) {
 		ArrayList<String[]> lines = new ArrayList<>();
 
 		BufferedReader reader = null;
