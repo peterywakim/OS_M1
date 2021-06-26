@@ -187,21 +187,25 @@ public class Main {
 		 * command as part of compiling , first error found will be Syntax
 		 */
 		printArray(b);
-		DataInputStream in=new DataInputStream(System.in);
 		int i,j,k,q,sum=0;
-		System.out.println("Enter number of process:");
-		int n=Integer.parseInt(in.readLine());
+		// n # of processes = 3
+		// bt burst time ( assume it is 5 )
+		//wt waiting time 
+		// tat turn around time
+		
+		
+		int n=3;
 		int bt[]=new int[n];
 		int wt[]=new int[n];
 		int tat[]=new int[n];
 		int a[]=new int[n];
-		System.out.println("Enter brust Time:");
+		
 		for(i=0;i<n;i++){
-			System.out.println("Enter brust Time for "+(i+1));
-			bt[i]=Integer.parseInt(in.readLine());
+			
+			bt[i]=5 + (i+1);
 		}
-		System.out.println("Enter Time quantum:");
-		q=Integer.parseInt(in.readLine());
+		//q time quantam
+		 q=2;
 		for(i=0;i<n;i++)
 			a[i]=bt[i];
 		for(i=0;i<n;i++)
