@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Hashtable;
 
+import javax.lang.model.element.ExecutableElement;
+
 public class Main {
 
 	 static String[][] loadFile(String filePath) {
@@ -188,66 +190,52 @@ public class Main {
 		 * command as part of compiling , first error found will be Syntax
 		 */
 		printArray(b);
-		int i,j,k,q,sum=0;
-		// n # of processes = 3
-		// bt burst time ( assume it is 5 )
-		//wt waiting time 
-		// tat turn around time
-		
-		
-		int n=3;
-		int bt[]=new int[n];
-		int wt[]=new int[n];
-		int tat[]=new int[n];
-		int a[]=new int[n];
-		
-		for(i=0;i<n;i++){
+		boolean flag= false;
+		PCB p1= new PCB("1", 3, false, 0, 340);
+		PCB p2= new PCB("2", 3, false, 341, 680);
+		PCB p3= new PCB("3", 3, false, 681, 1020);
+		int i=0;
+		int x=p1.pc;
+		int y=p2.pc;
+		int z=p3.pc;
+		while(!flag) {
+			System.out.print("Proccess Id:" + p1.getProcess_Id());
+			p1.setState(true);
+			while(x<p1.getEnd()&&i<2) {
+				x++;
+				p1.pc=x;
+				i++;
+			}
 			
-			bt[i]=5 + (i+1);
+			flag=true;
+			
 		}
-		//q time quantam
-		 q=2;
-		for(i=0;i<n;i++)
-			a[i]=bt[i];
-		for(i=0;i<n;i++)
-			wt[i]=0;
-		do{
-		for(i=0;i<n;i++){
-			if(bt[i]>q){
-				bt[i]-=q;
-				for(j=0;j<n;j++){
-					if((j!=i)&&(bt[j]!=0))
-					wt[j]+=q;
-				}
+		
+		while(!flag) {
+			System.out.print("Proccess Id:" + p2.getProcess_Id());
+			p2.setState(true);
+			while(x<p2.getEnd()&&i<2) {
+				y++;
+				p2.pc=y;
+				i++;
 			}
-			else{
-				for(j=0;j<n;j++){
-					if((j!=i)&&(bt[j]!=0))
-					wt[j]+=bt[i];
-				}
-				bt[i]=0;
+			
+			flag=true;
+			
+		}
+		while(!flag) {
+			System.out.print("Proccess Id:" + p3.getProcess_Id());
+			p3.setState(true);
+			while(x<p3.getEnd()&&i<2) {
+				z++;
+				p3.pc=z;
+				i++;
 			}
+			
+			flag=true;
+			
 		}
-		sum=0;
-		for(k=0;k<n;k++)
-			sum=sum+bt[k];
-		}
-		while(sum!=0);
-		for(i=0;i<n;i++)
-			tat[i]=wt[i]+a[i];
-		System.out.println("process\t\tBT\tWT\tTAT");
-		for(i=0;i<n;i++){
-			System.out.println("process"+(i+1)+"\t"+a[i]+"\t"+wt[i]+"\t"+tat[i]);
-		}
-		float avg_wt=0;
-		float avg_tat=0;
-		for(j=0;j<n;j++){
-			avg_wt+=wt[j];
-		}
-		for(j=0;j<n;j++){
-			avg_tat+=tat[j];
-		}
-		System.out.println("average waiting time "+(avg_wt/n)+"\n Average turn around time"+(avg_tat/n));
+		
 	}
 		
 	}
